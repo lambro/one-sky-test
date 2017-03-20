@@ -1,0 +1,48 @@
+<div ng-controller="ProjectCtrl">
+  <div class="row inbox">
+  <div class="projects" >
+    <h1>inbox</h1>
+    <div ng-repeat="project in projects">
+      <ul>
+        <li class="project animate" ng-click="setProject(project.name); project.read = true;">
+          <h2 ng-class="{'active':currentProject == project.name}" >{{project.name}}</h2>
+          <div class="notify" ng-show="!project.read"></div>
+        </li>
+      </ul>
+    </div>
+  </div>
+
+  <div ng-show="showConvos" class="conversations animate">
+    <h1>{{currentProject}} <a class="pull-right" href="#">x</a></h1>
+    <div ng-repeat="conversation in conversations">
+      <ul>
+        <li class="conversation" ng-click="setLanguage(conversation.language); conversation.read = true; projectRead();" ng-class="{'active':currentLanguage == conversation.language}"> 
+          <div class="avatar" style="background-image: url('{{conversation.image}}');"> </div>
+          <div class="conversation-container" >          
+            <h3>{{conversation.language}}</h3>
+            <p>{{conversation.content}}</p>
+            <h4>{{conversation.sender}}</h4>
+            <div class="notify" ng-show="!conversation.read"></div>
+          </div>
+        </li>
+      </ul>
+    </div>  
+  </div>
+
+  <div ng-show="showChats" class="chat-records animate">
+    <h1>{{currentLanguage}} <a class="pull-right" href="#">x</a></h1>    
+    <ul ng-repeat="chatRecord in chatRecords">
+      <li class="chat">
+        <div class="avatar" ng-class="{ true: 'pull-right', false: 'pull-left' }[chatRecord.me]" style="background-image: url('{{chatRecord.image}}');">
+        </div>
+        <div class="content-container" ng-class="{ true: 'pull-right', false: 'pull-left' }[chatRecord.me]">
+          <p class="content"> {{chatRecord.content}} </p>
+          <h4 class="sender"> {{chatRecord.sender}} </h4>
+        </div>
+      </li>
+    </ul>
+    <textarea placeholder="Hey! This is the project manager Vincent." ></textarea>
+  </div>
+    
+  </div>
+</div>

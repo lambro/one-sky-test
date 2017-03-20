@@ -1,0 +1,33 @@
+<div class="dropdown" ng-controller="AboutCtrl as dControl">
+  <button id="dropdownButton" ng-click="showDropdown = !showDropdown" class="btn btn-small btn-primary dropdown-control">
+    Dropdown
+  </button>
+
+  <div class="row notification-window animate" ng-show="showDropdown">
+    <div class="col-12 notification-header">
+      <p class="pull-left">Notifications</p> <a class="pull-right" ng-click="clearNotifications()" href>Mark all as Read</a>
+    </div>
+
+    <div class="container" ng-repeat="notification in notifications">
+      <div ng-class="{'active': !notification.read}" class="notification-wrapper row row-eq-height align-items-center" ng-click="clearNotiication(notification)">
+        <div class="col-sm-2">
+            <div class="avatar" style="background-image: url('{{notification.image}}');"> </div>
+        </div>
+        <div class="col-sm-10">
+          <p class="content">
+            {{notification.sender}} {{notification.content}} {{notification.team}}
+          </p>
+          <p class="date">{{notification.date}}</p>
+          <div ng-show="notification.request == true" class="buttons animate">
+            <button ng-click="acceptRequest(notification)" class="btn btn-small accept">Accept</button>
+            <button ng-click="declineRequest(notification)" class="btn btn-small decline">Decline</button>
+          </div>
+          <div class="temporary-messages animate" ng-hide="notification.timeout">
+            <p ng-show="notification.accepted || notification.declined" class="animate"> You have {{notification.displayMessage}} this request.</p>
+          </div>
+        </div>
+      </div>
+    </div> 
+    <!-- end of repeat HERE -->
+  </div>
+</div>
