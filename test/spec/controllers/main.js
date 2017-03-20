@@ -16,5 +16,4 @@ describe('Controller: MainCtrl', function () {
       // place here mocked dependencies
     });
   }));
-
 });

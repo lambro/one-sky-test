@@ -17,7 +17,19 @@ describe('Controller: AboutCtrl', function () {
     });
   }));
 
-  it('should contain the function that marks all messages as read', function () {
-    expect(AboutCtrl.clearNotifications).toBeDefined();
+  it('should contain the function that marks all notifications as read', function () {
+    expect(scope.clearNotifications).toBeDefined();
+  });  
+
+  it('should contain the function that marks the clicked notification as read', function () {
+    expect(scope.clearNotiication).toBeDefined();
+  });  
+
+  it('should contain the function that accepts a request', function () {
+    expect(scope.acceptRequest).toBeDefined();
+  });
+
+  it('should contain the function that declines a request', function () {
+    expect(scope.declineRequest).toBeDefined();
   });
 });
