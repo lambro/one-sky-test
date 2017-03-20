@@ -118,7 +118,7 @@ ul{
       padding: 20px;
       height: 150px;
       border-top: solid 1px #e4e9eb;
-      &.active{
+      &.active, &:hover{
         background-image: linear-gradient(to bottom, #ffffff, #eaf6fc);
       }
     }
