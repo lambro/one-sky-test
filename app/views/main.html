@@ -31,13 +31,13 @@
 
   <div ng-show="showChats" class="chat-records animate">
     <h1>{{currentLanguage}} <a class="pull-right" href="#">x</a></h1>    
-    <ul ng-repeat="chatRecord in chatRecords">
-      <li class="chat">
+    <ul >
+      <li class="chat" ng-repeat="chatRecord in chatRecords">
         <div class="avatar" ng-class="{ true: 'pull-right', false: 'pull-left' }[chatRecord.me]" style="background-image: url('{{chatRecord.image}}');">
         </div>
         <div class="content-container" ng-class="{ true: 'pull-right', false: 'pull-left' }[chatRecord.me]">
           <p class="content"> {{chatRecord.content}} </p>
-          <h4 class="sender"> {{chatRecord.sender}} </h4>
+          <h4 class="sender"> {{chatRecord.sender}}  <span class="date">{{chatRecord.date}}</span></h4>
         </div>
       </li>
     </ul>

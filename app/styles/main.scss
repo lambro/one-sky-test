@@ -137,9 +137,6 @@ ul{
       .conversation-container{
         width: 70%;
         display: inline-block;
-        h4 span{
-
-        }
       }
       .avatar{
         height: 40px;
@@ -153,6 +150,16 @@ ul{
         border-radius: 50%;
       }
     }
+  }
+  span.date{
+    opacity: 0.7;
+    font-family: HelveticaNeue;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 1.43;
+    letter-spacing: normal;
+    padding-left: 10px;
+    color: #667788;
   }
   .chat-records{
     @include make-sm-column(6);
