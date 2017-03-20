@@ -2,14 +2,14 @@
   <div class="row inbox">
   <div class="projects" >
     <h1>inbox</h1>
-    <div ng-repeat="project in projects">
-      <ul>
-        <li class="project animate" ng-click="setProject(project.name); project.read = true;">
-          <h2 ng-class="{'active':currentProject == project.name}" >{{project.name}}</h2>
-          <div class="notify" ng-show="!project.read"></div>
-        </li>
-      </ul>
-    </div>
+    <ul>
+      <div ng-repeat="project in projects">
+          <li class="project animate" ng-click="setProject(project.name); project.read = true;">
+            <h2 ng-class="{'active':currentProject == project.name}" >{{project.name}}</h2>
+            <div class="notify" ng-show="!project.read"></div>
+          </li>
+      </div>
+    </ul>
   </div>
 
   <div ng-show="showConvos" class="conversations animate">
@@ -21,7 +21,7 @@
           <div class="conversation-container" >          
             <h3>{{conversation.language}}</h3>
             <p>{{conversation.content}}</p>
-            <h4>{{conversation.sender}}</h4>
+            <h4>{{conversation.sender}} <span class="date">{{conversation.date}}</span></h4>
             <div class="notify" ng-show="!conversation.read"></div>
           </div>
         </li>

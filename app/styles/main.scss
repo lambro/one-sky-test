@@ -71,8 +71,18 @@ ul{
   .projects{
     background-image: linear-gradient(to top, #e8e8e8, #fafafa);
     @include make-sm-column(2);
+    padding: 0;
     .project{
       position: relative;
+      margin: 0;
+      transition: all 0.2s linear;
+      h2{
+        margin: 0;
+      }
+      padding: 15px;
+      &:hover{
+        background-color: #ffffff;
+      }
     }
     .notify {
       background-color: orange;
@@ -81,7 +91,7 @@ ul{
       border-radius: 50%;
       border: solid 1px #ffffff;
       position: absolute;
-      top: 7px;
+      top: 20px;
       right: 20px;
     }
 
@@ -127,6 +137,9 @@ ul{
       .conversation-container{
         width: 70%;
         display: inline-block;
+        h4 span{
+
+        }
       }
       .avatar{
         height: 40px;
